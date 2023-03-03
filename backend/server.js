@@ -22,7 +22,7 @@ const Tank = mongoose.model('tank', schema);
 app.use(express.json());
 
  
-app.post('/event.json', async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     const tanks = await Tank(req.body); // Retrieve all tanks from the database
     tanks.save().then(doc => console.log(doc));
